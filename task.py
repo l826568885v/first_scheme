@@ -5,11 +5,14 @@ import sys
 import re
 def create_repo_info(repo_num=3,branch_num=3):
     branch_flag = []
+    repo_list = []
     for i in repo_num:
         repo_name = "repo"+str(i)+"_info"
         for num in range(branch_num):
             branch_flag.append('branch'+chr(65+i))
         repo_name = {"repo_add":"address"+str(i),"repo_path":"path"+str(i),"branches":branch_flag}
+        repo_list.append(repo_name)
+    return repo_list
 # repo1_info = {"repo_add":"address1","repo_path":"path1","branches":['branchA','branchB','branchC']}
 # repo2_info = {"repo_add":"address2","repo_path":"path2","branches":['branchA','branchB','branchC']}
 # repo3_info = {"repo_add":"address3","repo_path":"path3","branches":['branchA','branchB','branchC']}
